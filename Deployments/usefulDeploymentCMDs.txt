@@ -1,0 +1,53 @@
+kubectl get deployments
+Portfolio view of all active deployments in the namespace.
+Example: kubectl get deployments -n prod
+
+kubectl describe deployment <name>
+Operational x-ray: strategy, replica alignment, rollout status, events.
+Example: kubectl describe deployment web-deploy
+
+kubectl apply -f deployment.yaml
+Create or update a deployment using declarative configuration.
+Example: kubectl apply -f web.yaml
+
+kubectl edit deployment <name>
+Hotfix a running deployment directly in the cluster.
+Example: kubectl edit deployment api-deploy
+(Useful for emergencies but avoid as a source of truth.)
+
+kubectl delete deployment <name>
+Decommission the deployment + underlying ReplicaSets + pods.
+Example: kubectl delete deployment frontend
+
+kubectl scale deployment <name> --replicas=<N>
+Dynamic capacity scaling.
+Example: kubectl scale deployment payment --replicas=4
+
+kubectl set image deployment/<name> <container>=<image>
+Roll out new app versions with tight control.
+Example:
+kubectl set image deployment/web nginx=nginx:1.27
+
+kubectl rollout status deployment/<name>
+Real-time checkpoint on rollout completion.
+Example: kubectl rollout status deployment/web
+
+kubectl rollout history deployment/<name>
+Audit trail for previous revisions.
+Example: kubectl rollout history deployment/web
+
+kubectl rollout undo deployment/<name>
+Instant rollback to last good configuration.
+Example: kubectl rollout undo deployment/web
+
+kubectl rollout undo deployment/<name> --to-revision=<X>
+Targeted rollback.
+Example: kubectl rollout undo deployment/web --to-revision=3
+
+kubectl get rs --selector=<labels>
+See all ReplicaSets attached to a deployment.
+Example: kubectl get rs -l app=web
+
+kubectl get pods --selector=<labels>
+Operational check of all pods governed by the deployment.
+Example: kubectl get pods -l app=web
