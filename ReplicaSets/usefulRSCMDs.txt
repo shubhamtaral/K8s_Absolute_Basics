@@ -1,0 +1,25 @@
+REPLICASET COMMANDS — population control + lifecycle governance
+
+kubectl get rs
+Visibility into controller-level replica orchestration.
+Example: kubectl get rs -n prod
+
+kubectl describe rs <name>
+Operational clarity into how a ReplicaSet is matching and managing pods.
+Example: kubectl describe rs frontend-rs -n prod
+
+kubectl scale rs <name> --replicas=<N>
+Adjust capacity baselines.
+Example: kubectl scale rs backend-rs --replicas=5
+
+kubectl delete rs <name>
+Terminate a ReplicaSet (and therefore its managed pods).
+Example: kubectl delete rs myapp-rs
+
+kubectl apply -f replicaset.yaml
+Create or update ReplicaSets in a declarative, GitOps-friendly model.
+
+kubectl get pods --selector=<label>=<value>
+Audit which pods belong to a ReplicaSet.
+Example:
+kubectl get pods -l app=myapp

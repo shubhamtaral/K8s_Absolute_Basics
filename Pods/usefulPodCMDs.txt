@@ -1,0 +1,33 @@
+POD COMMANDS — your day-to-day operational toolkit
+
+kubectl get pods
+Inventory your workload footprint.
+Example: kubectl get pods -n prod
+
+kubectl describe pod <name>
+Deep-dive into events, scheduling outcomes, and failure points.
+Example: kubectl describe pod api-7dfc9886f6-abcde
+
+kubectl logs <pod>
+Extract runtime telemetry.
+Example: kubectl logs payment-xyz -n prod
+
+kubectl logs -f <pod>
+Live tail for real-time troubleshooting.
+Example: kubectl logs -f frontend-abc
+
+kubectl exec -it <pod> -- sh
+Interactive diagnostics inside the container boundary.
+Example: kubectl exec -it api-xyz -- sh
+
+kubectl delete pod <pod>
+Force lifecycle recycling when a pod misbehaves.
+Example: kubectl delete pod web-1234
+
+kubectl top pod
+CPU/memory profiling (metrics-server dependency).
+Example: kubectl top pod -n prod
+
+kubectl port-forward pod/<pod> 8080:80
+Local-to-pod connectivity for secure debugging.
+Example: kubectl port-forward pod/api-xyz 9090:9090
