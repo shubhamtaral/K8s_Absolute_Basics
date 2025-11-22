@@ -1,0 +1,5 @@
+# There are 4 importent field in the k8s yaml
+# apiVersion: 
+# kind:
+# metadata:
+# spec:
