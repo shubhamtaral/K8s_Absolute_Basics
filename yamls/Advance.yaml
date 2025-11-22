@@ -1,0 +1,32 @@
+  ## Dictionaries: Unordered key-value pairs where values can be of various data types including arrays and other dictionaries.
+  ## Lists: Ordered collections of items, which can be of various data types including dictionaries and other lists.
+
+- Color: Blue
+  Model:
+      Name: Sedan
+      Year: 2020
+  Features:
+    - Sunroof
+    - Bluetooth
+    - Backup Camera
+  Engine:
+      Type: V6
+      Horsepower: 300
+  FuelEfficiency: 25 MPG
+  Price: $25,000
+
+- Color: Black
+  Model:
+      Name: Sedan
+      Year: 2020
+  Features:
+    - Sunroof
+    - Bluetooth
+  Engine:
+      Type: V6
+      Horsepower: 300
+  FuelEfficiency: 20 MPG
+  Price: $22,000
+
+
+  

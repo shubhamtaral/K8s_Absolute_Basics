@@ -1,0 +1,23 @@
+#Key Value Pairs
+Fruit: Apple
+Color: Red
+Taste: Sweet
+Quantity: 5
+# NOTE: Need a complusary space after :
+
+## Arrays/Lists 
+Fruits:
+- Banana
+- Grape
+
+## Dictionaries/Maps
+Banana:
+  Color: Yellow
+  Taste: Sweet
+  Quantity: 10
+Grape:
+  Color: Purple
+  Taste: Tart
+  Quantity: 15
+
+
