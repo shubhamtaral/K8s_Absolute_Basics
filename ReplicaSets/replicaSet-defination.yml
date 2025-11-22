@@ -1,0 +1,35 @@
+# Must have
+# apiVersion: apps/v1
+# kind: ReplicaSet
+# metadata:
+#   name: 
+#   labels:
+# spec:
+#   template:
+#     (Pod Defination)
+#     metadata:
+#     spec: 
+#   selector:
+#      matchLabels:
+#   replicas: 
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 3
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: myapp
+    spec: 
+      containers:
+        - name: nginx
+          image: nginx
