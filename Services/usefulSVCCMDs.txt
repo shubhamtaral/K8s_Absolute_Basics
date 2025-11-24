@@ -1,0 +1,51 @@
+Service Command Suite — the real-world essentials
+
+kubectl get svc
+Portfolio view of all services in the namespace.
+Example: kubectl get svc -n prod
+Why: Confirms exposure patterns and cluster IP allocations.
+
+kubectl describe svc <name>
+Deep diagnostic view of endpoints, selectors, ports, and events.
+Example: kubectl describe svc frontend
+Why: Shows if the Service is actually pointing to healthy backend pods.
+
+kubectl apply -f service.yaml
+Create or update a Service declaratively.
+Example: kubectl apply -f svc-web.yaml
+Why: Ensures clean, versioned networking changes.
+
+kubectl delete svc <name>
+Remove a Service from the cluster.
+Example: kubectl delete svc backend
+Why: Decommission unused endpoints and free networking resources.
+
+kubectl get endpoints <name>
+Shows which pods are backing the Service.
+Example: kubectl get endpoints frontend
+Why: If endpoints are empty, the Service routes to nobody.
+
+kubectl get ep <name>
+Abbreviated version — same as above.
+Example: kubectl get ep web
+Why: Fastest way to verify selector alignment.
+
+kubectl port-forward svc/<name> <local>:<remote>
+Forward traffic from your local machine to a Service.
+Example: kubectl port-forward svc/api 8080:80
+Why: Debug internal Services without exposing them externally.
+
+kubectl get svc --all-namespaces
+Cluster-wide visibility into Service topology.
+Example: kubectl get svc --all-namespaces
+Why: Useful when tracing cross-namespace connectivity.
+
+kubectl edit svc <name>
+Inline update for quick fixes (ports, selectors).
+Example: kubectl edit svc web
+Why: Handy, but avoid as long-term config source.
+
+kubectl get svc -o wide
+Shows cluster IP + external IP + node ports.
+Example: kubectl get svc -o wide
+Why: Helps verify load balancer or nodePort exposure.
